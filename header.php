@@ -22,7 +22,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site container-fluid">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'lccwm' ); ?></a>
+	<a class="sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'lccwm' ); ?></a>
 
 	<nav id="site-navigation" class="row navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="site-branding navbar-brand">
@@ -47,10 +47,14 @@
 		<?php
 		wp_nav_menu( array(
 			'theme_location' => 'menu-1',
+			'depth'          => '1',
 			'container_id'   => '',
 			'container_class' => '',
 			'menu_id'        => 'primary-menu',
 			'menu_class'     => 'collapse navbar-collapse',
+			'menu_class'     => 'collapse navbar-collapse list-unstyled',
+			'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
+			'walker'         => new WP_Bootstrap_Navwalker()
 		) ); ?>
 		
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-menu" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle <?php esc_html_e( 'Primary Menu', 'lccwm' ); ?>">

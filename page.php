@@ -48,7 +48,7 @@ get_header();
 				$description = get_sub_field('description'); ?>
 				
 				<div class="col-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="card">
+				<div class="card orange">
 					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" class="card-img-top" />
 					<div class="card-body">
 						<h5 class="card-title"><?php echo $name; ?></h5>
