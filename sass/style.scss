@@ -58,3 +58,17 @@ body {
 #primary-menu {
 	margin: 0;
 }
+
+.custom-logo-link {
+	display: block;
+	
+}
+.custom-logo-link > img {
+	display: block;
+	max-height: 53px;
+	width: auto;
+}
+
+#sjb-application-form {
+	display: none !important;
+}
