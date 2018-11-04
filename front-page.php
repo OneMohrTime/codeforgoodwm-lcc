@@ -1,39 +1,52 @@
 <?php
 get_header(); ?>
 
-	<div class="billboard row mx-0">
-		<?php 
-		$banner = get_field('banner'); ?>
-		
+    <div class="container-fluid">
+	<div class="row">
 		<?php echo do_shortcode('[metaslider id="233"]'); ?>
-		<div class="col-12 text-center hero-text py-3">
-			<h4><?php echo $banner['tagline']; ?></h4>
-		</div>
 	</div>
+    <div class="row hero-text p-4">
+		<div class="col text-center">
+			<h4>
+				<?php 
 
-	<div class="container mt-3 mb-3">
-		<div class="col-lg-4">
-			<?php 
-			$intro = get_field('intro'); ?>
-			<h1><?php echo $intro['title']; ?></h1>
-			<?php echo $intro['content']; ?>
+				$banner = get_field('banner');
+				echo $banner['tagline']; 
+				?>
+			</h4>
 		</div>
-		<div class="col-lg-8">
-			<?php 
-			$featured_card = get_field('featured_card'); ?>
-			<div class="card orange">
-				<img class="card-img-top img-responsive" alt="Card image cap" src="<?php echo $featured_card['image']['url']; ?>">
-				<div class="card-body">
-					<div class="row">
-						<div class="col-lg-6">
-							<h2 class="card-text">
-								<?php echo $featured_card['content']; ?>
-							</h2>
-						</div>
-						<div class="col-lg-6">
-							<p class="text-right">
-								<a href="<?php echo $featured_card['button_link']; ?>" class="btn btn-light active"><?php echo $featured_card['button_title']; ?></a>
-							</p>
+    </div>
+    </div>
+
+	<div class="container-fluid mt-3 mb-3">
+		<div class="row">
+			<div class="col-md-6">
+				<?php 
+				$intro = get_field('intro'); ?>
+				<h1>
+					<?php echo $intro['title']; ?>
+				</h1>
+				<h5 style="font-weight: normal;">
+					<?php echo $intro['content']; ?>
+				</h5>
+			</div>
+			<div class="col-md-6">
+				<?php 
+				$featured_card = get_field('featured_card'); ?>
+				<div class="card orange">
+					<img class="card-img-top img-responsive" alt="Card image cap" src="<?php echo $featured_card['image']['url']; ?>">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-lg-6">
+								<h2 class="card-text">
+									<?php echo $featured_card['content']; ?>
+								</h2>
+							</div>
+							<div class="col-lg-6">
+								<p class="text-right">
+									<a href="<?php echo $featured_card['button_link']; ?>" class="btn btn-light active"><?php echo $featured_card['button_title']; ?></a>
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -41,7 +54,7 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div class="container mt-3 mb-3 p-5 gray">
+	<div class="container-fluid mt-3 mb-3 p-5 gray">
 	<?php if( have_rows('cards') ): ?>
 
 		<div class="card-deck">
