@@ -72,3 +72,9 @@ body {
 #sjb-application-form {
 	display: none !important;
 }
+
+.current-menu-item {
+	.nav-link {
+		border-bottom: 2px #dc3545 solid;
+	}
+}

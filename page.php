@@ -32,8 +32,9 @@ get_header();
 		endwhile; // End of the loop.
 		
 		if( have_rows('values_card') ):
-		echo '<h3>' . get_sub_field('title_copy') . '</h3>';
+		echo '<h3>Our Values</h3>';
 		
+		$i = 0;
 		while ( have_rows('values_card') ) : the_row();
 			// vars
 			$values_color = get_sub_field('color');
@@ -50,18 +51,43 @@ get_header();
 				</div>
 			</div>
 			</div>
-			
-		<?php
+			<?php 
+			// Increment the iterator.
+			$i ++;
+			if ($i % 3 === 0) {
+				// Wrap card deck for small displays on every second card.
+				echo '<div class="clearfix mb-4"></div>';
+			}
+		
 		endwhile;
 		endif; ?>
 		
-		<div class="clearfix"></div>
+		<div class="clearfix mt-5"></div>
 
 		<?php
+		$our_story = get_field('our_story');
+		
+		if($our_story): ?>
+		
+		<figure class="my-5">
+			<div class="col-12 col-sm-6">
+				<h3 class="mb-2">Our Story</h3>
+				<?php echo $our_story['body_copy']; ?>
+			</div>
+			<div class="col-12 col-sm-6">
+				<img src="<?php echo $our_story['image']['url']; ?>" alt="<?php echo $our_story['image']['alt']; ?>" class="img-fluid mt-5" />
+			</div>
+		</figure>
+		
+		<div class="clearfix"></div>
+		
+		<?php
+		endif;
+		
 		// check if the repeater field has rows of data
 		if( have_rows('person') ): ?>
 			<h3 class="my-3">Our Steering Committee</h3>
-			<div class="row">
+			<div class="row mb-5">
 
 			<?php
 			// loop through the rows of data
@@ -72,7 +98,7 @@ get_header();
 				$name = get_sub_field('name');
 				$description = get_sub_field('description'); ?>
 				
-				<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+				<div class="col-12 col-sm-6 col-md-4">
 				<div class="card bg-light text-dark pt-3 px-3 mb-3">
 					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" class="card-img-top" />
 					<div class="card-body px-0">
