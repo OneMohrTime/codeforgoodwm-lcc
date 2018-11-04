@@ -5,7 +5,7 @@ get_header(); ?>
 		<?php 
 		$banner = get_field('banner'); ?>
 		
-		<img src="<?php echo $banner['image']['url']; ?>" alt="<?php echo $banner['image']['alt']; ?>" />
+		<?php echo do_shortcode('[metaslider id="233"]'); ?>
 		<div class="row text-center hero-text">
 			<h4><?php echo $banner['tagline']; ?></h4>
 		</div>
