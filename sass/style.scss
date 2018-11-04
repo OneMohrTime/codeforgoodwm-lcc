@@ -25,6 +25,7 @@ body {
 }
 
 .billboard {
+	position: relative;
 	height: 400px;
 	overflow: hidden;
 	& > img {
@@ -32,6 +33,19 @@ body {
 		height: 100%;
 		width: 100%;
 		object-fit: cover;
+	}
+	.entry-header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: #ffb600;
+		color: #fff;
+		width: 100%;
+		padding: 15px;
+		
+		.entry-title {
+			margin-bottom: 0;
+		}
 	}
 }
 
@@ -75,6 +89,11 @@ body {
 
 .current-menu-item {
 	.nav-link {
-		border-bottom: 2px #dc3545 solid;
+		border-bottom: 3px #dc3545 solid;
 	}
+}
+
+article.type-page,
+article.type-post {
+	position: relative;	
 }

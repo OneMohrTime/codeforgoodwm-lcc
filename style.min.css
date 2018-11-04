@@ -19,14 +19,17 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */body{font-family:'Roboto',sans-serif}
-.billboard{height:400px;overflow:hidden}
+.billboard{position:relative;height:400px;overflow:hidden}
 .billboard>img{display:block;height:100%;width:100%;-o-object-fit:cover;object-fit:cover}
+.billboard .entry-header{position:absolute;top:0;left:0;background-color:#ffb600;color:#fff;width:100%;padding:15px}
+.billboard .entry-header .entry-title{margin-bottom:0}
 #tribe-events-content-wrapper{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
 #primary-menu{margin:0}
 .custom-logo-link{display:block}
 .custom-logo-link>img{display:block;max-height:53px;width:auto}
 #sjb-application-form{display:none !important}
-.current-menu-item .nav-link{border-bottom:2px #dc3545 solid}
+.current-menu-item .nav-link{border-bottom:3px #dc3545 solid}
+article.type-page,article.type-post{position:relative}
 @media(min-width:576px){#tribe-events-content-wrapper{max-width:540px}
 }@media(min-width:768px){#tribe-events-content-wrapper{max-width:720px}
 }@media(min-width:992px){#tribe-events-content-wrapper{max-width:960px}

@@ -13,7 +13,21 @@
  */
 
 get_header();
+	
+	/* grab the url for the full size featured image */
+	$featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
 ?>
+
+	<figure class="billboard">
+		<img src="<?php echo $featured_img_url; ?>"
+				 alt="banner image for latin community coalition; ?>"
+				 class="img-fluid" />
+		<header class="entry-header">
+			<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
+		</header><!-- .entry-header -->
+	</figure>
+
+	<?php //lccwm_post_thumbnail(); ?>
 
 	<div id="primary" class="content-area container">
 		<main id="main" class="site-main">
