@@ -56,7 +56,7 @@ get_header();
 			$values_body = get_sub_field('body'); ?>
 
 			<div class="col-12 col-sm-6 col-md-4">
-			<div class="card <?php echo $values_color; ?>">
+			<div class="card <?php echo $values_color; ?> mb-3">
 				<div class="card-header">
 					<h3 class="card-title"><?php echo $values_title; ?></h3>
 				</div>

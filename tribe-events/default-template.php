@@ -15,20 +15,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-get_header();
-	
-	/* grab the url for the full size featured image */
-	$featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-?>
+get_header(); ?>
 
-	<figure class="billboard">
-		<img src="<?php echo $featured_img_url; ?>"
-				 alt="banner image for latin community coalition; ?>"
-				 class="img-fluid" />
-		<header class="entry-header">
-			<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
-		</header><!-- .entry-header -->
-	</figure>
+	<header class="event-header col-12 bg-warning text-light text-uppercase p-3 mb-4">
+		<h3 class="mb-0">Events</h3>
+	</header><!-- .entry-header -->
 
 	<?php //lccwm_post_thumbnail(); ?>
 
@@ -43,7 +34,7 @@ get_header();
 				'meta_value'	=> 'type2'
 			) ); ?>
 			<h3 class="text-warning">LCC Candidate Panels</h3>
-			<div class="card-deck">
+			<div class="card-deck mb-3">
 			<?php while ( $candidates->have_posts() ) : $candidates->the_post(); ?>
 				<div class="card bg-dark p-4">
 					<a href="<?php echo get_permalink() ?>" class="d-block text-light">
@@ -68,12 +59,13 @@ get_header();
 			endwhile; // End of the loop.
 			?>
 			
-			<?php tribe_events_before_html(); ?>
+			<?php //tribe_events_before_html(); ?>
 			<?php tribe_get_view(); ?>
-			<?php tribe_events_after_html(); ?>
+			<?php //tribe_events_after_html(); ?>
 			
-			<div class="bg-gray">
-			<?php echo do_shortcode('[contact-form-7 id="264" title="Event Form Posting"]'); ?>
+			<div class="row bg-light py-5 px-3 mb-4">
+				<h3 class="font-weight-bold">Submit an Event</h3>
+				<?php echo do_shortcode('[contact-form-7 id="264" title="Event Form Posting"]'); ?>
 			</div>
 			
 			<?php
@@ -88,9 +80,8 @@ get_header();
 			<?php while ( $speakers->have_posts() ) : $speakers->the_post(); ?>
 				<div class="card bg-primary p-4">
 					<a href="<?php echo get_permalink() ?>" class="d-block text-light">
-						<div class="card-date">2018</div>
 						<?php the_title(); ?>
-						<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="thumbnail image" class="img-fluid" />
+						<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="thumbnail image" class="img-fluid mt-3 p-4" />
 					</a>
 				</div>
 			<?php endwhile; wp_reset_query(); ?>

@@ -10,11 +10,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-
-	<?php lccwm_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -27,23 +26,15 @@
 		?>
 	</div><!-- .entry-content -->
 	
-	<?php 
+	<?php //lccwm_post_thumbnail();
 
-	$images = get_field('photo_gallery');
-	$size = 'full'; // (thumbnail, medium, large, full or custom size)
+	if(get_field('photo_gallery')):
+	$image_ids = get_field('photo_gallery', false, false);
+	$shortcode = '[gallery ids="' . implode(',', $image_ids) . '"]';
 
-	if( $images ): ?>
-		<ul>
-			<?php foreach( $images as $image ): ?>
-				<li>
-					<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
-				</li>
-			<?php endforeach; ?>
-		</ul>
-	<?php endif; ?>
+	echo do_shortcode( $shortcode );
+	endif;
 	
-	<?php 
-
 	$sponsors = get_field('sponsors');
 
 	if( $sponsors ): ?>

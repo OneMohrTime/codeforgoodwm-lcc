@@ -30,6 +30,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 #sjb-application-form{display:none !important}
 .current-menu-item .nav-link{border-bottom:3px #dc3545 solid}
 article.type-page,article.type-post{position:relative}
+.past_event .gallery{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
 @media(min-width:576px){#tribe-events-content-wrapper{max-width:540px}
 }@media(min-width:768px){#tribe-events-content-wrapper{max-width:720px}
 }@media(min-width:992px){#tribe-events-content-wrapper{max-width:960px}

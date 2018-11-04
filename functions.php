@@ -121,8 +121,8 @@ add_action( 'widgets_init', 'lccwm_widgets_init' );
  */
 function lccwm_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), null, 'all' );
-	wp_enqueue_style( 'custom', get_template_directory_uri() . '/css/custom.css', array(), null, 'all' );
-	wp_enqueue_style( 'lccwm', get_stylesheet_uri(), array(), null, 'all' );
+	wp_enqueue_style( 'custom', get_template_directory_uri() . '/css/custom.css', array('bootstrap'), null, 'all' );
+	wp_enqueue_style( 'lccwm', get_stylesheet_uri(), array('bootstrap'), null, 'all' );
 
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', '//code.jquery.com/jquery-3.2.1.min.js', array(), null, true);
