@@ -5,9 +5,9 @@ get_header(); ?>
 	<div class="row">
 		<?php echo do_shortcode('[metaslider id="233"]'); ?>
 	</div>
-    <div class="row hero-text p-4">
+    <div class="row hero-text" style="padding: 60px;">
 		<div class="col text-center">
-			<h4>
+			<h4 style="max-width: 800px; display: inline-block;">
 				<?php 
 
 				$banner = get_field('banner');
@@ -20,13 +20,13 @@ get_header(); ?>
 
 	<div class="container-fluid mt-3 mb-3">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-6 p-3">
 				<?php 
 				$intro = get_field('intro'); ?>
-				<h1>
+				<h1 style="padding: 10px;">
 					<?php echo $intro['title']; ?>
 				</h1>
-				<h5 style="font-weight: normal;">
+				<h5 style="font-weight: normal; padding: 10px;">
 					<?php echo $intro['content']; ?>
 				</h5>
 			</div>
@@ -37,14 +37,14 @@ get_header(); ?>
 					<img class="card-img-top img-responsive" alt="Card image cap" src="<?php echo $featured_card['image']['url']; ?>">
 					<div class="card-body">
 						<div class="row">
-							<div class="col-lg-6">
-								<h2 class="card-text">
+							<div class="col-lg-8">
+								<h2 class="card-text text-uppercase center-block">
 									<?php echo $featured_card['content']; ?>
 								</h2>
 							</div>
-							<div class="col-lg-6">
-								<p class="text-right">
-									<a href="<?php echo $featured_card['button_link']; ?>" class="btn btn-light active"><?php echo $featured_card['button_title']; ?></a>
+							<div class="col-lg-2">
+								<p class="text-uppercase center-block">
+									<a href="<?php echo $featured_card['button_link']; ?>" class="btn btn-light active font-weight-bold" style="background-color: #fff;"><?php echo $featured_card['button_title']; ?></a>
 								</p>
 							</div>
 						</div>
@@ -72,12 +72,12 @@ get_header(); ?>
 			$image = get_sub_field('image');
 			?>
 				<div class="card <?php echo $color; ?>">
-					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" class="card-img-top img-fluid" />
+					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" class="card-img-top img-fluid" style="border:none"/>
 					<div class="card-body">
 						<?php echo $content; ?>
 					</div>
-					<div class="card-footer text-center <?php echo $color; ?>">
-						<a href="<?php echo $button_link; ?>" class="btn active">
+					<div class="card-footer text-center text-uppercase <?php echo $color; ?>">
+						<a href="<?php echo $button_link; ?>" class="btn active font-weight-bold">
 							<?php echo $button_title; ?>
 						</a>
 					</div>
