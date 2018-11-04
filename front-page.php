@@ -1,12 +1,12 @@
 <?php
 get_header(); ?>
 
-	<div class="row mx-0">
+	<div class="billboard row mx-0">
 		<?php 
 		$banner = get_field('banner'); ?>
 		
 		<?php echo do_shortcode('[metaslider id="233"]'); ?>
-		<div class="row text-center hero-text">
+		<div class="col-12 text-center hero-text py-3">
 			<h4><?php echo $banner['tagline']; ?></h4>
 		</div>
 	</div>
@@ -56,6 +56,7 @@ get_header(); ?>
 			$content = get_sub_field('content');
 			$button_title = get_sub_field('button_title');
 			$button_link = get_sub_field('button_link'); 
+			$image = get_sub_field('image');
 			?>
 				<div class="card <?php echo $color; ?>">
 					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" class="card-img-top img-fluid" />
