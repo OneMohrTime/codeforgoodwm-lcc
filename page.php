@@ -23,7 +23,7 @@ get_header();
 				 alt="banner image for latin community coalition; ?>"
 				 class="img-fluid" />
 		<header class="entry-header">
-			<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
+			<?php the_title( '<h3 class="entry-title text-uppercase">', '</h3>' ); ?>
 		</header><!-- .entry-header -->
 	</figure>
 
