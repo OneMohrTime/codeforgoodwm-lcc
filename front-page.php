@@ -1,12 +1,17 @@
 <?php
 get_header(); ?>
 
-	<div class="row mx-0">
+	<div class="billboard row mx-0">
 		<?php 
 		$banner = get_field('banner'); ?>
 		
-		<img src="<?php echo $banner['image']['url']; ?>" alt="<?php echo $banner['image']['alt']; ?>" />
-		<div class="row text-center hero-text">
+		<img src="<?php echo $banner['image']['sizes']['thumbnail']; ?>"
+			 alt="<?php echo $banner['image']['alt']; ?>"
+			 class="img-fluid"
+			 srcset="<?php echo $banner['image']['sizes']['medium']; ?> 768w,
+					 <?php echo $banner['image']['sizes']['large']; ?> 1024w,
+					 <?php echo $banner['image']['url']; ?> 1920w" />
+		<div class="col-12 text-center hero-text py-3">
 			<h4><?php echo $banner['tagline']; ?></h4>
 		</div>
 	</div>
