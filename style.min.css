@@ -23,6 +23,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .billboard>img{display:block;height:100%;width:100%;-o-object-fit:cover;object-fit:cover}
 #tribe-events-content-wrapper{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
 #primary-menu{margin:0}
+.custom-logo-link{display:block}
+.custom-logo-link>img{display:block;max-height:53px;width:auto}
+#sjb-application-form{display:none !important}
+.current-menu-item .nav-link{border-bottom:2px #dc3545 solid}
 @media(min-width:576px){#tribe-events-content-wrapper{max-width:540px}
 }@media(min-width:768px){#tribe-events-content-wrapper{max-width:720px}
 }@media(min-width:992px){#tribe-events-content-wrapper{max-width:960px}

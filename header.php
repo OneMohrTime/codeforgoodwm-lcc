@@ -49,9 +49,8 @@
 			'theme_location' => 'menu-1',
 			'depth'          => '1',
 			'container_id'   => '',
-			'container_class' => '',
+			'container_class' => 'ml-auto',
 			'menu_id'        => 'primary-menu',
-			'menu_class'     => 'collapse navbar-collapse',
 			'menu_class'     => 'collapse navbar-collapse list-unstyled',
 			'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
 			'walker'         => new WP_Bootstrap_Navwalker()
